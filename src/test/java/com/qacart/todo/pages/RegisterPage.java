@@ -3,6 +3,7 @@ package com.qacart.todo.pages;
 import com.qacart.todo.apis.UserApi;
 import com.qacart.todo.models.User;
 import com.qacart.todo.utils.ConfigUtils;
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -24,10 +25,12 @@ public class RegisterPage {
     private final By confirmPasswordInput = By.xpath("//input[@data-testid='confirm-password']");
     private final By submitButton = By.xpath("//button[@data-testid='submit']");
 
+    @Step("Visit the sign up page")
     public void load(WebDriver driver) {
         driver.get(ConfigUtils.getInstance().getBaseURL() + "/signup");
     }
 
+    @Step("Register using the UI")
     public void registerUI(WebDriver driver, User user) {
         driver.findElement(this.firstNameInput).sendKeys(user.getFirstName());
         driver.findElement(this.lastNameInput).sendKeys(user.getLastName());
@@ -37,7 +40,7 @@ public class RegisterPage {
         driver.findElement(this.submitButton).click();
     }
 
-
+    @Step("Register using the API")
     public void registerAPI(WebDriver driver, User user) {
         Response response = UserApi.getInstance().register(user);
 

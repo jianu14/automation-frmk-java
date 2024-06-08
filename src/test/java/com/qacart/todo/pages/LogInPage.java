@@ -3,6 +3,7 @@ package com.qacart.todo.pages;
 import com.qacart.todo.apis.UserApi;
 import com.qacart.todo.models.User;
 import com.qacart.todo.utils.ConfigUtils;
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -21,16 +22,19 @@ public class LogInPage {
     private final By passwordInput = By.xpath("//input[@data-testid='password']");
     private final By submitButton = By.xpath("//button[@data-testid='submit']");
 
+    @Step("Visit the log in page")
     public void load(WebDriver driver) {
         driver.get(ConfigUtils.getInstance().getBaseURL() + "/login");
     }
 
+    @Step("Log in using the UI")
     public void logInUI(WebDriver driver, User user) {
         driver.findElement(this.emailInput).sendKeys(user.getEmail());
         driver.findElement(this.passwordInput).sendKeys(user.getPassword());
         driver.findElement(this.submitButton).click();
     }
 
+    @Step("Log in using the UI")
     public void logInAPI(WebDriver driver, User user) {
         Response response = UserApi.getInstance().login(user);
 
