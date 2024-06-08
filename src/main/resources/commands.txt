@@ -1,6 +1,16 @@
-mvn clean test
+Summary:
+    mvn clean test
+    allure serve allure-results
 
-mvn clean test -Dbrowser={CHROME, FIREFOX, EDGE, SAFARI}
+Run tests using maven:
+    mvn clean test
+    mvn clean test -Dbrowser={CHROME, FIREFOX, EDGE, SAFARI}
+    mvn clean test -Denv={PRODUCTION, LOCAL, QA, CERT}
 
-mvn clean test -Denv={PRODUCTION, LOCAL, QA, CERT}
+See reports using allure:
+    https://allurereport.org/docs/install-for-macos/
+        -> brew install allure (in MAC terminal)
+        -> allure --version (see version)
+    https://allurereport.org/docs/testng/ -> pom configuration
+    how to view reports? allure serve allure-results
 
