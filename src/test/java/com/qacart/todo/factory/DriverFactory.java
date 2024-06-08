@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class DriverFactory {
 
-    public static WebDriver initializeDriver() {
+    public WebDriver initializeDriver() {
         WebDriver driver;
         String browser = System.getProperty("browser", "CHROME");
         switch (browser) {

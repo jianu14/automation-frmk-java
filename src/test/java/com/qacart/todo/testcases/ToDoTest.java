@@ -23,16 +23,16 @@ public class ToDoTest extends BaseTest {
     public void shouldBeAbleToAddAToDo() throws InterruptedException {
         User user = User.getUserOne();
 
-        logInPage.load(driver);
-        logInPage.logInUI(driver, user);
+        logInPage.load(driver.get());
+        logInPage.logInUI(driver.get(), user);
         Thread.sleep(500);
 
-        toDoPage.clickOnPlusButton(driver);
+        toDoPage.clickOnPlusButton(driver.get());
         String inputToDoText = "Learn to cook";
-        newTodoPage.addToDoUI(driver, inputToDoText);
+        newTodoPage.addToDoUI(driver.get(), inputToDoText);
         Thread.sleep(500);
 
-        String taskText = toDoPage.getToDoText(driver);
+        String taskText = toDoPage.getToDoText(driver.get());
         assertThat(taskText).isEqualTo(inputToDoText);
         Thread.sleep(500);
     }
@@ -45,16 +45,16 @@ public class ToDoTest extends BaseTest {
     public void shouldBeAbleToAddAnotherToDo() throws InterruptedException {
         User user = User.getUserTwo();
 
-        logInPage.load(driver);
-        logInPage.logInAPI(driver, user);
+        logInPage.load(driver.get());
+        logInPage.logInAPI(driver.get(), user);
         Thread.sleep(500);
 
-        toDoPage.clickOnPlusButton(driver);
+        toDoPage.clickOnPlusButton(driver.get());
         String inputToDoText = "Learn to cook";
-        newTodoPage.addToDoUI(driver, inputToDoText);
+        newTodoPage.addToDoUI(driver.get(), inputToDoText);
         Thread.sleep(500);
 
-        String taskText = toDoPage.getToDoText(driver);
+        String taskText = toDoPage.getToDoText(driver.get());
         assertThat(taskText).isEqualTo(inputToDoText);
         Thread.sleep(500);
     }
@@ -68,17 +68,17 @@ public class ToDoTest extends BaseTest {
     public void shouldBeAbleToDeleteAToDo() throws InterruptedException {
         User user = User.getUserThree();
 
-        logInPage.load(driver);
-        logInPage.logInAPI(driver, user);
+        logInPage.load(driver.get());
+        logInPage.logInAPI(driver.get(), user);
         Thread.sleep(500);
 
         String inputToDoText = "Learn to not cook";
         newTodoPage.addToDoAPI(user, inputToDoText);
         Thread.sleep(500);
 
-        toDoPage.load(driver);
-        toDoPage.deleteToDo(driver);
-        boolean isNoToDosDisplayed = toDoPage.isNoToDosMessageDisplayed(driver);
+        toDoPage.load(driver.get());
+        toDoPage.deleteToDo(driver.get());
+        boolean isNoToDosDisplayed = toDoPage.isNoToDosMessageDisplayed(driver.get());
         assertThat(isNoToDosDisplayed).isTrue();
         Thread.sleep(500);
     }

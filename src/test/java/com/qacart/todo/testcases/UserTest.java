@@ -20,11 +20,11 @@ public class UserTest extends BaseTest {
     public void shouldBeAbleToRegisterToTheApplicationUI() throws InterruptedException {
         User user = User.generateRandomRegisterUser();
 
-        registerPage.load(driver);
-        registerPage.registerUI(driver, user);
+        registerPage.load(driver.get());
+        registerPage.registerUI(driver.get(), user);
         Thread.sleep(500);
 
-        boolean isWelcomeDisplayed = toDoPage.isWelcomeMessageDisplayed(driver);
+        boolean isWelcomeDisplayed = toDoPage.isWelcomeMessageDisplayed(driver.get());
         assertThat(isWelcomeDisplayed).isTrue();
         Thread.sleep(500);
     }
@@ -36,11 +36,11 @@ public class UserTest extends BaseTest {
     public void shouldBeAbleToRegisterToTheApplicationAPI() throws InterruptedException {
         User user = User.generateRandomRegisterUser();
 
-        registerPage.load(driver);
-        registerPage.registerAPI(driver, user);
+        registerPage.load(driver.get());
+        registerPage.registerAPI(driver.get(), user);
         Thread.sleep(500);
 
-        boolean isWelcomeDisplayed = toDoPage.isWelcomeMessageDisplayed(driver);
+        boolean isWelcomeDisplayed = toDoPage.isWelcomeMessageDisplayed(driver.get());
         assertThat(isWelcomeDisplayed).isTrue();
         Thread.sleep(500);
     }
