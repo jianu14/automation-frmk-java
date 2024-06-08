@@ -16,7 +16,7 @@ public class UserTest extends BaseTest {
     /**
      * Register made from UI
      */
-    @Test
+    @Test(description = "Should be able to Register (UI)")
     public void shouldBeAbleToRegisterToTheApplicationUI() throws InterruptedException {
         User user = User.generateRandomRegisterUser();
 
@@ -32,7 +32,7 @@ public class UserTest extends BaseTest {
     /**
      * Register made from API
      */
-    @Test
+    @Test(description = "Should be able to Register (API)")
     public void shouldBeAbleToRegisterToTheApplicationAPI() throws InterruptedException {
         User user = User.generateRandomRegisterUser();
 

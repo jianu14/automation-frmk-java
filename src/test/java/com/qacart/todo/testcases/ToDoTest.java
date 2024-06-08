@@ -19,7 +19,7 @@ public class ToDoTest extends BaseTest {
      * Log in made from UI
      * Add made from UI
      */
-    @Test
+    @Test(description = "Should be able to Add a ToDo")
     public void shouldBeAbleToAddAToDo() throws InterruptedException {
         User user = User.getUserOne();
 
@@ -41,7 +41,7 @@ public class ToDoTest extends BaseTest {
      * Log in made from API
      * Add made from UI
      */
-    @Test
+    @Test(description = "Should be able to Add another ToDo")
     public void shouldBeAbleToAddAnotherToDo() throws InterruptedException {
         User user = User.getUserTwo();
 
@@ -64,7 +64,7 @@ public class ToDoTest extends BaseTest {
      * Add made from API
      * Delete made from UI
      */
-    @Test
+    @Test(description = "Should be able to Delete a ToDo")
     public void shouldBeAbleToDeleteAToDo() throws InterruptedException {
         User user = User.getUserThree();
 
