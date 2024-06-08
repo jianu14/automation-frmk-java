@@ -1,0 +1,6 @@
+mvn clean test
+
+mvn clean test -Dbrowser={CHROME, FIREFOX, EDGE, SAFARI}
+
+mvn clean test -Denv={PRODUCTION, LOCAL, QA, CERT}
+
