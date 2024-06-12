@@ -17,7 +17,7 @@ public class ConfigUtils {
     }
 
     private Properties readProp() {
-        InputStream is = null;
+        InputStream is;
         try {
             String env = System.getProperty("env", "PRODUCTION");
             switch (env) {
