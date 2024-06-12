@@ -1,7 +1,6 @@
 package com.qacart.todo.factory;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.groovy.json.internal.Chr;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
